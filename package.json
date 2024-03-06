@@ -9,11 +9,13 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "serve": "node main.cjs"
+    "build-storybook": "storybook build -o docs",
+    "serve": "node --no-warnings=ExperimentalWarning --loader ts-node/esm serve.ts"
   },
   "dependencies": {
+    "@dotlottie/react-player": "^1.6.18",
     "@itcode-dev/eslint-config": "^2.0.1",
+    "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -38,8 +40,8 @@
     "express": "^4.18.3",
     "storybook": "^7.6.17",
     "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }
