@@ -30,12 +30,14 @@ jobs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: .yarn
+          path: |
+            .node_modules
+            .yarn
           key: ${{ runner.os }}-lottie-${{ hashFiles('yarn.lock') }}
           restore-keys: ${{ runner.os }}-lottie
 
       - name: Dependencies Install
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache != 'true'
         run: yarn
 
   build:
@@ -60,7 +62,9 @@ jobs:
     - name: Cache dependencies
       uses: actions/cache@v3
       with:
-        path: .yarn
+        path: |
+          .node_modules
+          .yarn
         key: ${{ runner.os }}-lottie-${{ hashFiles('yarn.lock') }}
         restore-keys: ${{ runner.os }}-lottie
 
