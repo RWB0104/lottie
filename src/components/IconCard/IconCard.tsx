@@ -7,7 +7,7 @@
 
 import DotLottieIcon from '@lottie/components/DotLottieIcon';
 import LottieIcon from '@lottie/components/LottieIcon';
-import { icons } from '@lottie/util/variables';
+import { basepath, icons } from '@lottie/util/variables';
 import classNames from 'classnames/bind';
 import { ReactNode, useCallback } from 'react';
 
@@ -36,7 +36,7 @@ export default function IconCard({ iconName }: IconCardProps): ReactNode
 	{
 		const fileName = `${iconName}.${ext}`;
 
-		const response = await fetch(`/lottie/${fileName}`);
+		const response = await fetch(`${basepath}/${fileName}`);
 		const blob = await response.blob();
 
 		const url = URL.createObjectURL(blob);

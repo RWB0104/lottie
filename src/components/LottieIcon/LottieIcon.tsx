@@ -5,7 +5,7 @@
  * @since 2024.03.07 Thu 01:08:23
  */
 
-import { icons } from '@lottie/util/variables';
+import { basepath, icons } from '@lottie/util/variables';
 import Lottie, { LottieComponentProps } from 'lottie-react';
 import { ReactNode, useEffect, useState } from 'react';
 
@@ -32,7 +32,7 @@ export default function LottieIcon({ iconName, ...props }: LottieIconProps): Rea
 	{
 		const handle = async (): Promise<void> =>
 		{
-			const response = await fetch(`/lottie/${iconName}.json`);
+			const response = await fetch(`${basepath}/${iconName}.json`);
 			const json = await response.json();
 
 			setState(json);

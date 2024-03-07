@@ -6,7 +6,7 @@
  */
 
 import { DotLottiePlayer, Props } from '@dotlottie/react-player';
-import { icons } from '@lottie/util/variables';
+import { basepath, icons } from '@lottie/util/variables';
 import { ReactNode } from 'react';
 
 export interface DotLottieIconProps extends Omit<Props, 'src'>
@@ -27,6 +27,6 @@ export interface DotLottieIconProps extends Omit<Props, 'src'>
 export default function DotLottieIcon({ iconName, autoplay = true, loop = true, ...props }: DotLottieIconProps): ReactNode
 {
 	return (
-		<DotLottiePlayer autoplay={autoplay} data-component='DotLottieIcon' loop={loop} src={`/lottie/${iconName}.lottie`} {...props} />
+		<DotLottiePlayer autoplay={autoplay} data-component='DotLottieIcon' loop={loop} src={`${basepath}/${iconName}.lottie`} {...props} />
 	);
 }

@@ -25,3 +25,5 @@ export const icons = [
 	'weather-snow',
 	'weather-thunderstorm'
 ] as const;
+
+export const basepath = import.meta.env.DEV ? '/lottie' : '/lottie/lottie';
