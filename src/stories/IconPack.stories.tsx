@@ -1,20 +1,23 @@
-import { Meta, StoryObj } from '@storybook/react';
+import IconCard from '@lottie/components/IconCard/IconCard';
+import { icons } from '@lottie/util/variables';
+import { Meta } from '@storybook/react';
 import { ReactNode } from 'react';
-
-import LottieIcon from '../components/LottieIcon';
 
 const meta = {
 	// argTypes: { backgroundColor: { control: 'color' } },
-	component: LottieIcon,
+	component: IconCard,
 	parameters: { layout: 'centered' },
 	tags: [ 'autodocs' ],
-	title: 'Example/LottieIcon'
-} satisfies Meta<typeof LottieIcon>;
+	title: 'Example/IconCard'
+} satisfies Meta<typeof IconCard>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 export function All(): ReactNode
 {
-	return <LottieIcon iconName='lottie-logo' />;
+	return (
+		<div>
+			{icons.map((icon) => <IconCard iconName={icon} key={icon} />)}
+		</div>
+	);
 }
