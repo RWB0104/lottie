@@ -23,7 +23,8 @@ export const icons = [
 	'weather-scattered-clouds',
 	'weather-shower-rains',
 	'weather-snow',
-	'weather-thunderstorm'
+	'weather-thunderstorm',
+	'web-development'
 ] as const;
 
 export const basepath = import.meta.env.DEV ? '/lottie' : '/lottie/lottie';
