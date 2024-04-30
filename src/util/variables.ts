@@ -9,6 +9,7 @@ export const icons = [
 	'empty-file',
 	'image-loading-improved',
 	'lottie-logo',
+	'love-message-burst',
 	'weather-broken-clouds',
 	'weather-clear-sky',
 	'weather-few-clouds',
