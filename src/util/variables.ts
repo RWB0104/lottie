@@ -6,6 +6,7 @@
  */
 
 export const icons = [
+	'building-exterior',
 	'empty-file',
 	'image-loading-improved',
 	'lottie-logo',
